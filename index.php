@@ -41,14 +41,16 @@
 
     <div id="app">
         <section class="container">
-            <ul>
-                <li v-for="(discs, index) in discList" :key="index">
-                    <h2>{{ discs.title }}</h2>
-
-                    {{ discs.author }}
-                    {{ discs.year }}
-                    {{ discs.genre }}
-                    {{ discs.poster }}
+            <h1 class="d-flex justify-content-center pt-5">My Albums</h1>
+            <ul class="d-flex row-cols-4 justify-content-center flex-wrap align-content-center gap-4">
+                <li class="d-flex flex-column  align-items-center px-5 py-4 rounded-2"
+                    v-for="(discs, index) in discList" :key="index">
+                    <img :src="discs.poster" alt="img-album">
+                    <div class="d-flex text-center flex-column align-items-center">
+                        <h2 class=" fs-5 mt-2"> {{ discs.title }} </h2>
+                        <h3 class=" fs-6"> {{ discs.author }} </h3>
+                        <span class=" fs-5"> {{ discs.year }} </span>
+                    </div>
                 </li>
             </ul>
 
